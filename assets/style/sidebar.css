@@ -1,0 +1,96 @@
+/* Initially set the sidebar width */
+.sidebar {
+  width: 231px;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+}
+
+#sidebarToggle {
+  text-align: center;
+  left: 40px;
+  width: 40px;
+}
+
+/* Submenu hidden by default */
+.has-submenu .submenu {
+  display: none;
+}
+
+/* Show submenu on hover */
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Active submenu item */
+.submenu-link.active {
+  background-color: #17a2b8;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Optional: Smooth submenu display */
+.submenu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Icon rotation when submenu is open (on hover for now) */
+.has-submenu:hover .toggle-icon {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+/* Active submenu parent styling */
+.main-link.active {
+  background-color: #0d6efd;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Active submenu item */
+.submenu-link.active {
+  background-color: #17a2b8;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Rotate arrow icon */
+.toggle-icon.rotate {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+
+/* Collapsed sidebar */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar .nav-link,
+.sidebar h4 {
+  transition: opacity 0.3s ease;
+}
+
+
+/* Hide text in collapsed mode */
+.sidebar.collapsed .nav-link span,
+.sidebar.collapsed h4 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hover to temporarily expand */
+.sidebar.collapsed:hover {
+  width: 250px;
+}
+
+.sidebar.collapsed:hover .nav-link span,
+.sidebar.collapsed:hover h4 {
+  opacity: 1;
+  pointer-events: auto;
+}

@@ -1,0 +1,6 @@
+/* Wrapper for the main content to avoid sidebar overlap */
+.content-wrapper {
+    margin-left: 230px; /* Matches sidebar width */
+    padding: 20px;
+  }
+  
