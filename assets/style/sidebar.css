@@ -1,96 +1,70 @@
-/* Initially set the sidebar width */
+/* Sidebar Styles */
 .sidebar {
   width: 231px;
   top: 0;
   left: 0;
   font-size: 12px;
-  transition: width 0.3s ease;
+  transition: transform 0.3s ease;
   overflow-x: hidden;
+  z-index: 1040;
 }
 
-#sidebarToggle {
-  text-align: center;
-  left: 40px;
-  width: 40px;
-}
-
-/* Submenu hidden by default */
-.has-submenu .submenu {
-  display: none;
-}
-
-/* Show submenu on hover */
-.has-submenu:hover .submenu {
-  display: block;
-}
-
-/* Active submenu item */
-.submenu-link.active {
-  background-color: #17a2b8;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-/* Optional: Smooth submenu display */
 .submenu {
+  display: none;
   transition: all 0.3s ease-in-out;
 }
 
-/* Icon rotation when submenu is open (on hover for now) */
-.has-submenu:hover .toggle-icon {
-  transform: rotate(90deg);
-  transition: transform 0.3s ease;
-}
-
-/* Active submenu parent styling */
-.main-link.active {
-  background-color: #0d6efd;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-/* Active submenu item */
-.submenu-link.active {
-  background-color: #17a2b8;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-/* Rotate arrow icon */
 .toggle-icon.rotate {
   transform: rotate(90deg);
   transition: transform 0.3s ease;
 }
 
-
-/* Collapsed sidebar */
-.sidebar.collapsed {
-  width: 60px;
+.main-link.text-primary,
+.submenu-link.text-primary {
+  font-weight: bold;
 }
 
-.sidebar .nav-link,
-.sidebar h4 {
-  transition: opacity 0.3s ease;
+#sidebarToggle {
+  position: fixed;
+  top: 15px;
+  left: 90px;
+  z-index: 1051;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Hide text in collapsed mode */
-.sidebar.collapsed .nav-link span,
-.sidebar.collapsed h4 {
-  opacity: 0;
-  pointer-events: none;
+/* Overlay for mobile */
+#sidebarOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1030;
 }
 
-/* Hover to temporarily expand */
-.sidebar.collapsed:hover {
-  width: 250px;
-}
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
 
-.sidebar.collapsed:hover .nav-link span,
-.sidebar.collapsed:hover h4 {
-  opacity: 1;
-  pointer-events: auto;
+  body.js-loaded .sidebar {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+
+  body.js-loaded .sidebar.active {
+    transform: translateX(0);
+  }
 }

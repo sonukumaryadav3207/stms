@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Admin Login</title>
   <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
 </head>
+
 <body class="bg-light">
   <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="card shadow p-4" style="width: 350px;">
